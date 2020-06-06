@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Products" EntityType="Model1.Store.Products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaymentRules" EntityType="Model1.Store.PaymentRules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Payments" EntityType="Model1.Store.Payments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Customers" EntityType="Model1.Store.Customers" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PaymentRulePayment" Association="Model1.Store.PaymentRulePayment">
+      <End Role="PaymentRule" EntitySet="PaymentRules" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="PaymentCustomer" Association="Model1.Store.PaymentCustomer">
+      <End Role="Payment" EntitySet="Payments" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="ProductPaymentRule" Association="Model1.Store.ProductPaymentRule">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="PaymentRule" EntitySet="PaymentRules" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Stock" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentRules">
+    <Key>
+      <PropertyRef Name="PaymentRuleId" />
+    </Key>
+    <Property Name="PaymentRuleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="Payments_PaymentId" Type="int" Nullable="false" />
+    <Property Name="Product_ProductId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payments">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentDate" Type="datetime" Nullable="false" />
+    <Property Name="Customers_CustomerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Balance" Type="float" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="PaymentRulePayment">
+    <End Role="PaymentRule" Type="Model1.Store.PaymentRules" Multiplicity="*" />
+    <End Role="Payment" Type="Model1.Store.Payments" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="PaymentId" />
+      </Principal>
+      <Dependent Role="PaymentRule">
+        <PropertyRef Name="Payments_PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PaymentCustomer">
+    <End Role="Payment" Type="Model1.Store.Payments" Multiplicity="*" />
+    <End Role="Customer" Type="Model1.Store.Customers" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerId" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="Customers_CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductPaymentRule">
+    <End Role="Product" Type="Model1.Store.Products" Multiplicity="1" />
+    <End Role="PaymentRule" Type="Model1.Store.PaymentRules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="PaymentRule">
+        <PropertyRef Name="Product_ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

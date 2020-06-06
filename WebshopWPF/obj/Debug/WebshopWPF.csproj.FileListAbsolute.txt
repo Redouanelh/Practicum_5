@@ -18,3 +18,7 @@ C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\bin\Debug\EntityFramework.Sql
 C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\bin\Debug\EntityFramework.xml
 C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\WebshopWPF.csproj.CopyComplete
+C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\Login.g.cs
+C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\Login.baml
+C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\ButtonTheme.baml
+C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\App.baml

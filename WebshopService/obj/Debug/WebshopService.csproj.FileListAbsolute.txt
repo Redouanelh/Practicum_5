@@ -1,0 +1,14 @@
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\webshop.mdf
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\webshop_log.ldf
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\WebshopService.dll.config
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\WebshopService.dll
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\WebshopService.pdb
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\EntityFramework.dll
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\EntityFramework.xml
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\obj\Debug\WebshopService.csprojAssemblyReference.cache
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\obj\Debug\WebshopService.csproj.CoreCompileInputs.cache
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\obj\Debug\WebshopService.csproj.CopyComplete
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\obj\Debug\WebshopService.dll
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\obj\Debug\WebshopService.pdb

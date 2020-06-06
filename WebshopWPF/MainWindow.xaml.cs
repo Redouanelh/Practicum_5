@@ -22,7 +22,7 @@ namespace WebshopWPF
     {
         public MainWindow()
         {
-            InitializeComponent();
+                InitializeComponent();
         }
     }
 }

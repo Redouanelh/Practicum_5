@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Product)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentRules">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.PaymentRule)">
+        <MappingFragment StoreEntitySet="PaymentRules">
+          <ScalarProperty Name="PaymentRuleId" ColumnName="PaymentRuleId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Payment)">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Customer)">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PaymentRulePayment" TypeName="Model1.PaymentRulePayment" StoreEntitySet="PaymentRules">
+      <EndProperty Name="Payment">
+        <ScalarProperty Name="PaymentId" ColumnName="Payments_PaymentId" />
+      </EndProperty>
+      <EndProperty Name="PaymentRule">
+        <ScalarProperty Name="PaymentRuleId" ColumnName="PaymentRuleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PaymentCustomer" TypeName="Model1.PaymentCustomer" StoreEntitySet="Payments">
+      <EndProperty Name="Customer">
+        <ScalarProperty Name="CustomerId" ColumnName="Customers_CustomerId" />
+      </EndProperty>
+      <EndProperty Name="Payment">
+        <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductPaymentRule" TypeName="Model1.ProductPaymentRule" StoreEntitySet="PaymentRules">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="ProductId" ColumnName="Product_ProductId" />
+      </EndProperty>
+      <EndProperty Name="PaymentRule">
+        <ScalarProperty Name="PaymentRuleId" ColumnName="PaymentRuleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

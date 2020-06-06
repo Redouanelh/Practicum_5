@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WebshopWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Dashboard" Height="500" Width="900" Icon="webshop-icon.png" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         
     </Grid>

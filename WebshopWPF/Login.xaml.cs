@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace WebshopWPF
+{
+    /// <summary>
+    /// Interaction logic for Login.xaml
+    /// </summary>
+    public partial class Login : Window
+    {
+
+        // For the login interface styling, we used a youtube video which explained us how .xaml files worked:
+        // https://www.youtube.com/watch?v=MWVfsLOhUXM
+        public Login()
+        {
+            InitializeComponent();
+        }
+    }
+}

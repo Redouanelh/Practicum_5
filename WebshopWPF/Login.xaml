@@ -1,0 +1,89 @@
+﻿<Window x:Class="WebshopWPF.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebshopWPF"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="350" Icon="webshop-icon.png" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="10" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FF404040" Offset="0.0"/>
+                        <GradientStop Color="#ff8c00" Offset="1.2"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <StackPanel VerticalAlignment="Center">
+                <Image Source="webshop-icon.png" Width="80"/>
+                <TextBlock/>
+                <TextBlock Text="Webshop Hogeschool Utrecht"
+                           HorizontalAlignment="Center"
+                           FontSize="20"
+                           FontFamily="helvetica"
+                           Foreground="White"
+                           FontWeight="Light"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox FontFamily="helvetica"
+                             FontWeight="Light"
+                             Text="Username"
+                             FontSize="18"
+                             Foreground="White"
+                             HorizontalAlignment="Center"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="48, 0, 0, 0"/>
+                </StackPanel>
+                <Border Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0, 20, 0, 0">
+                    <PasswordBox FontFamily="helvetica"
+                             FontWeight="Light"
+                             Password="Password"
+                             FontSize="18"
+                             Foreground="White"
+                             HorizontalAlignment="Center"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="48, 0, 0, 0"/>
+                </StackPanel>
+                <Border Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0, 50, 0, 0">
+                    <Button Width="100" Height="40" Content="Register" Margin="45, 0, 60, 0"/>
+                    <Button Width="100" Height="40" Content="Login"/>
+                </StackPanel>
+                
+            </StackPanel>
+
+
+        </Grid>
+    </Grid>
+</Window>
