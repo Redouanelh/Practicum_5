@@ -36,11 +36,12 @@ namespace WebshopWPF
             if (found)
             {
                 // Persoon heeft juiste inloggegevens gegeven
+                InvalidCombinationLabel.Visibility = Visibility.Hidden;
 
             } else
             {
-                // Persoon heeft verkeerde inloggegevens gegeven
-
+                // Persoon heeft onjuiste inloggegevens gegeven
+                InvalidCombinationLabel.Visibility = Visibility.Visible;
             }
         }
 

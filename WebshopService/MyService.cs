@@ -11,8 +11,23 @@ namespace WebshopService
     {
         public Boolean LoginCheck(String username, String password)
         {
-            Console.WriteLine("Username: " + username + " en password: " + password);
-            return false;
+            using (Model1Container ctx = new Model1Container())
+            {
+                var customer = (from c in ctx.Customers
+                               where c.Username == username && c.Password == password
+                               select c);
+               
+                if (customer.Any())
+                {
+                    Console.Write("\nLogin successful...");
+                    return true;
+                } else
+                {
+                    Console.WriteLine("\nLogin failed...");
+                    return false;
+                }
+            }
+           
         }
     }
 }

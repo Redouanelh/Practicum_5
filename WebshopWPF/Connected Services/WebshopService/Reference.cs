@@ -15,12 +15,6 @@ namespace WebshopWPF.WebshopService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WebshopService.IMyService")]
     public interface IMyService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/test", ReplyAction="http://tempuri.org/IMyService/testResponse")]
-        string test();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/test", ReplyAction="http://tempuri.org/IMyService/testResponse")]
-        System.Threading.Tasks.Task<string> testAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/LoginCheck", ReplyAction="http://tempuri.org/IMyService/LoginCheckResponse")]
         bool LoginCheck(string username, string password);
         
@@ -53,14 +47,6 @@ namespace WebshopWPF.WebshopService {
         
         public MyServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public string test() {
-            return base.Channel.test();
-        }
-        
-        public System.Threading.Tasks.Task<string> testAsync() {
-            return base.Channel.testAsync();
         }
         
         public bool LoginCheck(string username, string password) {
