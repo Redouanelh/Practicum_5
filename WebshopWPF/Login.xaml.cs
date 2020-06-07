@@ -22,7 +22,7 @@ namespace WebshopWPF
     {
         private MyServiceClient webshopProxy = new MyServiceClient();
 
-        // For the login interface styling, we used a youtube video which explained us how .xaml files worked:
+        // Voor het stylen van onze applicatie hebben we een youtube video gebruikt die ons uitlegt hoe .xaml files werken:
         // https://www.youtube.com/watch?v=MWVfsLOhUXM
         public Login()
         {            
@@ -31,12 +31,20 @@ namespace WebshopWPF
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            // Check of de username en password combinatie correct in de database staan (zo ja; true, zo nee; false)
             Boolean found = webshopProxy.LoginCheck(UsernameInput.Text, PasswordInput.Password);
 
             if (found)
             {
                 // Persoon heeft juiste inloggegevens gegeven
                 InvalidCombinationLabel.Visibility = Visibility.Hidden;
+
+                // Opent de MainWindow (de client dashboard)
+                MainWindow dashboard = new MainWindow();
+                dashboard.Show();
+
+                // Sluit de inlogpagina
+                this.Close();
 
             } else
             {
@@ -47,7 +55,12 @@ namespace WebshopWPF
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            // Opent de Register pagina
+            Register registerWindow = new Register();
+            registerWindow.Show();
+
+            // Sluit de inlogpagina
+            this.Close();
         }
     }
 }

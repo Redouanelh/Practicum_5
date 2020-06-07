@@ -22,3 +22,5 @@ C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\Login.g.cs
 C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\Login.baml
 C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\ButtonTheme.baml
 C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\App.baml
+C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\Register.g.cs
+C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\Register.baml

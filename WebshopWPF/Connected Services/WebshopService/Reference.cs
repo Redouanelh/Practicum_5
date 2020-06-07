@@ -20,6 +20,12 @@ namespace WebshopWPF.WebshopService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/LoginCheck", ReplyAction="http://tempuri.org/IMyService/LoginCheckResponse")]
         System.Threading.Tasks.Task<bool> LoginCheckAsync(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/RegisterCheck", ReplyAction="http://tempuri.org/IMyService/RegisterCheckResponse")]
+        string RegisterCheck(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/RegisterCheck", ReplyAction="http://tempuri.org/IMyService/RegisterCheckResponse")]
+        System.Threading.Tasks.Task<string> RegisterCheckAsync(string username);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +61,14 @@ namespace WebshopWPF.WebshopService {
         
         public System.Threading.Tasks.Task<bool> LoginCheckAsync(string username, string password) {
             return base.Channel.LoginCheckAsync(username, password);
+        }
+        
+        public string RegisterCheck(string username) {
+            return base.Channel.RegisterCheck(username);
+        }
+        
+        public System.Threading.Tasks.Task<string> RegisterCheckAsync(string username) {
+            return base.Channel.RegisterCheckAsync(username);
         }
     }
 }

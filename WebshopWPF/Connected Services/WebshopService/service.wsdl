@@ -12,16 +12,35 @@
   <wsdl:message name="IMyService_LoginCheck_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginCheckResponse" />
   </wsdl:message>
+  <wsdl:message name="IMyService_RegisterCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterCheck" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_RegisterCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterCheckResponse" />
+  </wsdl:message>
   <wsdl:portType name="IMyService">
     <wsdl:operation name="LoginCheck">
       <wsdl:input wsaw:Action="http://tempuri.org/IMyService/LoginCheck" message="tns:IMyService_LoginCheck_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMyService/LoginCheckResponse" message="tns:IMyService_LoginCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/RegisterCheck" message="tns:IMyService_RegisterCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/RegisterCheckResponse" message="tns:IMyService_RegisterCheck_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IMyService" type="tns:IMyService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LoginCheck">
       <soap:operation soapAction="http://tempuri.org/IMyService/LoginCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCheck">
+      <soap:operation soapAction="http://tempuri.org/IMyService/RegisterCheck" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -12,5 +12,8 @@ namespace WebshopService
 
         [OperationContract]
         Boolean LoginCheck(String username, String password);
+
+        [OperationContract]
+        String RegisterCheck(String username);
     }
 }
