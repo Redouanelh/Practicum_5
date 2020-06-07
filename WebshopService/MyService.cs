@@ -9,11 +9,10 @@ namespace WebshopService
 {
     public class MyService : IMyService
     {
-
-        // Test methode
-        public int Add(int x, int y)
+        public Boolean LoginCheck(String username, String password)
         {
-            return (x + y);
+            Console.WriteLine("Username: " + username + " en password: " + password);
+            return false;
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WebshopWPF.WebshopService;
 
 namespace WebshopWPF
 {
@@ -19,12 +20,33 @@ namespace WebshopWPF
     /// </summary>
     public partial class Login : Window
     {
+        private MyServiceClient webshopProxy = new MyServiceClient();
 
         // For the login interface styling, we used a youtube video which explained us how .xaml files worked:
         // https://www.youtube.com/watch?v=MWVfsLOhUXM
         public Login()
+        {            
+                InitializeComponent();           
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
+            Boolean found = webshopProxy.LoginCheck(UsernameInput.Text, PasswordInput.Password);
+
+            if (found)
+            {
+                // Persoon heeft juiste inloggegevens gegeven
+
+            } else
+            {
+                // Persoon heeft verkeerde inloggegevens gegeven
+
+            }
+        }
+
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

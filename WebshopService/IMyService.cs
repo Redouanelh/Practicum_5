@@ -10,8 +10,7 @@ namespace WebshopService
     public interface IMyService
     {
 
-        // Test methode
         [OperationContract]
-        int Add(int x, int y);
+        Boolean LoginCheck(String username, String password);
     }
 }

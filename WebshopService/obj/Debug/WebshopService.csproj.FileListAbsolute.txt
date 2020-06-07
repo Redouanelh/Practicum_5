@@ -1,6 +1,5 @@
 C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\webshop.mdf
 C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\webshop_log.ldf
-C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\WebshopService.dll.config
 C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\WebshopService.dll
 C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\WebshopService.pdb
 C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\EntityFramework.dll
