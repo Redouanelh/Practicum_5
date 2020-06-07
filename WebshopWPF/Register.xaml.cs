@@ -44,7 +44,7 @@ namespace WebshopWPF
                 RegisterButton.Visibility = Visibility.Hidden;
 
                 // Toon de gegenereerde wachtwoord in een label
-                GeneratedPassword.Content = password;
+                GeneratedPassword.Text = password;
             }
 
         }
