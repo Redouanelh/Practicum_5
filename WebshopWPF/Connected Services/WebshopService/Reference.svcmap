@@ -25,6 +25,7 @@
     <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="892bcd14-01af-468d-b969-0c89671eafed" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WebshopService/Service1/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="145e22fe-dbec-48ea-a4ae-9366386c0fb7" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WebshopService/Service1/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="66139a7a-3fbb-459c-8bd4-4a64762bcec2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WebshopService/Service1/mex" />
+    <MetadataFile FileName="WebshopService.xsd" MetadataType="Schema" ID="e7b27324-8a5c-416e-b2cc-7248f4cb5a53" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/WebshopService/Service1/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

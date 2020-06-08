@@ -9,7 +9,442 @@
 //------------------------------------------------------------------------------
 
 namespace WebshopWPF.WebshopService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/WebshopService")]
+    [System.SerializableAttribute()]
+    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebshopWPF.WebshopService.PaymentRule[] PaymentRulesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StockField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebshopWPF.WebshopService.PaymentRule[] PaymentRules {
+            get {
+                return this.PaymentRulesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentRulesField, value) != true)) {
+                    this.PaymentRulesField = value;
+                    this.RaisePropertyChanged("PaymentRules");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductId {
+            get {
+                return this.ProductIdField;
+            }
+            set {
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Stock {
+            get {
+                return this.StockField;
+            }
+            set {
+                if ((this.StockField.Equals(value) != true)) {
+                    this.StockField = value;
+                    this.RaisePropertyChanged("Stock");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PaymentRule", Namespace="http://schemas.datacontract.org/2004/07/WebshopService")]
+    [System.SerializableAttribute()]
+    public partial class PaymentRule : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PaymentRuleIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebshopWPF.WebshopService.Payment PaymentsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebshopWPF.WebshopService.Product ProductField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Amount {
+            get {
+                return this.AmountField;
+            }
+            set {
+                if ((this.AmountField.Equals(value) != true)) {
+                    this.AmountField = value;
+                    this.RaisePropertyChanged("Amount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaymentRuleId {
+            get {
+                return this.PaymentRuleIdField;
+            }
+            set {
+                if ((this.PaymentRuleIdField.Equals(value) != true)) {
+                    this.PaymentRuleIdField = value;
+                    this.RaisePropertyChanged("PaymentRuleId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebshopWPF.WebshopService.Payment Payments {
+            get {
+                return this.PaymentsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentsField, value) != true)) {
+                    this.PaymentsField = value;
+                    this.RaisePropertyChanged("Payments");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebshopWPF.WebshopService.Product Product {
+            get {
+                return this.ProductField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Payment", Namespace="http://schemas.datacontract.org/2004/07/WebshopService")]
+    [System.SerializableAttribute()]
+    public partial class Payment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebshopWPF.WebshopService.Customer CustomersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime PaymentDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PaymentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebshopWPF.WebshopService.PaymentRule[] PaymentRuleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebshopWPF.WebshopService.Customer Customers {
+            get {
+                return this.CustomersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomersField, value) != true)) {
+                    this.CustomersField = value;
+                    this.RaisePropertyChanged("Customers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime PaymentDate {
+            get {
+                return this.PaymentDateField;
+            }
+            set {
+                if ((this.PaymentDateField.Equals(value) != true)) {
+                    this.PaymentDateField = value;
+                    this.RaisePropertyChanged("PaymentDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaymentId {
+            get {
+                return this.PaymentIdField;
+            }
+            set {
+                if ((this.PaymentIdField.Equals(value) != true)) {
+                    this.PaymentIdField = value;
+                    this.RaisePropertyChanged("PaymentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebshopWPF.WebshopService.PaymentRule[] PaymentRule {
+            get {
+                return this.PaymentRuleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentRuleField, value) != true)) {
+                    this.PaymentRuleField = value;
+                    this.RaisePropertyChanged("PaymentRule");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Customer", Namespace="http://schemas.datacontract.org/2004/07/WebshopService")]
+    [System.SerializableAttribute()]
+    public partial class Customer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double BalanceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CustomerIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebshopWPF.WebshopService.Payment[] PaymentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Balance {
+            get {
+                return this.BalanceField;
+            }
+            set {
+                if ((this.BalanceField.Equals(value) != true)) {
+                    this.BalanceField = value;
+                    this.RaisePropertyChanged("Balance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CustomerId {
+            get {
+                return this.CustomerIdField;
+            }
+            set {
+                if ((this.CustomerIdField.Equals(value) != true)) {
+                    this.CustomerIdField = value;
+                    this.RaisePropertyChanged("CustomerId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebshopWPF.WebshopService.Payment[] Payment {
+            get {
+                return this.PaymentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentField, value) != true)) {
+                    this.PaymentField = value;
+                    this.RaisePropertyChanged("Payment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MyService", Namespace="http://schemas.datacontract.org/2004/07/WebshopService")]
+    [System.SerializableAttribute()]
+    public partial class MyService : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WebshopService.IMyService")]
@@ -26,6 +461,18 @@ namespace WebshopWPF.WebshopService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/RegisterCheck", ReplyAction="http://tempuri.org/IMyService/RegisterCheckResponse")]
         System.Threading.Tasks.Task<string> RegisterCheckAsync(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetProducts", ReplyAction="http://tempuri.org/IMyService/GetProductsResponse")]
+        WebshopWPF.WebshopService.Product[] GetProducts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetProducts", ReplyAction="http://tempuri.org/IMyService/GetProductsResponse")]
+        System.Threading.Tasks.Task<WebshopWPF.WebshopService.Product[]> GetProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetInstance", ReplyAction="http://tempuri.org/IMyService/GetInstanceResponse")]
+        WebshopWPF.WebshopService.MyService GetInstance();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetInstance", ReplyAction="http://tempuri.org/IMyService/GetInstanceResponse")]
+        System.Threading.Tasks.Task<WebshopWPF.WebshopService.MyService> GetInstanceAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +516,22 @@ namespace WebshopWPF.WebshopService {
         
         public System.Threading.Tasks.Task<string> RegisterCheckAsync(string username) {
             return base.Channel.RegisterCheckAsync(username);
+        }
+        
+        public WebshopWPF.WebshopService.Product[] GetProducts() {
+            return base.Channel.GetProducts();
+        }
+        
+        public System.Threading.Tasks.Task<WebshopWPF.WebshopService.Product[]> GetProductsAsync() {
+            return base.Channel.GetProductsAsync();
+        }
+        
+        public WebshopWPF.WebshopService.MyService GetInstance() {
+            return base.Channel.GetInstance();
+        }
+        
+        public System.Threading.Tasks.Task<WebshopWPF.WebshopService.MyService> GetInstanceAsync() {
+            return base.Channel.GetInstanceAsync();
         }
     }
 }

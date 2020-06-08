@@ -67,6 +67,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MyProducts.xaml.cs">
+      <DependentUpon>MyProducts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
@@ -98,6 +101,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MyProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Register.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +134,12 @@
     </None>
     <None Include="Connected Services\WebshopService\service1.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebshopService\WebshopService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebshopService\WebshopWPF.WebshopService.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

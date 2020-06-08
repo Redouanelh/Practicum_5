@@ -20,7 +20,7 @@ namespace WebshopService
                
                 if (customer.Any())
                 {
-                    Console.Write("\nLogin successful...");
+                    Console.WriteLine("\nLogin successful...");
                     return true;
                 } else
                 {
@@ -64,5 +64,30 @@ namespace WebshopService
                 }
             }
         }
+
+        public List<Product> GetProducts()
+        {
+            using (Model1Container ctx = new Model1Container())
+            {
+                // Lege lijst waarin de producten komen die gereturned gaan worden
+                List<Product> products = new List<Product>();
+
+                // Haal de producten op uit de database met een stock (voorraad) boven de 0
+                Console.WriteLine("Retrieving products from database...");
+                var linqproducts = from p in ctx.Products
+                                   where p.Stock > 0
+                                   select p;
+                
+                // Voeg de producten toe aan de lege lijst van hierboven
+                foreach (Product p in linqproducts)
+                {
+                    Console.WriteLine("Name: " + p.Name + " Price: " + p.Price + " Stock: " + p.Stock + "\n");
+                    products.Add(p);
+                }
+
+                return products;
+            }
+        }
+
     }
 }
