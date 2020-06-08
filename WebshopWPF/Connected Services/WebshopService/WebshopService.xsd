@@ -56,8 +56,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfPayment" nillable="true" type="tns:ArrayOfPayment" />
-  <xs:complexType name="MyService">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:element name="MyService" nillable="true" type="tns:MyService" />
 </xs:schema>

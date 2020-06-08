@@ -21,8 +21,7 @@ namespace WebshopWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MyServiceClient webshopProxy = new MyServiceClient();
-        public MainWindow()
+        public MainWindow(MyServiceClient webshopProxy)
         {
             InitializeComponent();
 

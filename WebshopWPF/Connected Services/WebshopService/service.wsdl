@@ -25,12 +25,6 @@
   <wsdl:message name="IMyService_GetProducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductsResponse" />
   </wsdl:message>
-  <wsdl:message name="IMyService_GetInstance_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetInstance" />
-  </wsdl:message>
-  <wsdl:message name="IMyService_GetInstance_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetInstanceResponse" />
-  </wsdl:message>
   <wsdl:portType name="IMyService">
     <wsdl:operation name="LoginCheck">
       <wsdl:input wsaw:Action="http://tempuri.org/IMyService/LoginCheck" message="tns:IMyService_LoginCheck_InputMessage" />
@@ -43,10 +37,6 @@
     <wsdl:operation name="GetProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IMyService/GetProducts" message="tns:IMyService_GetProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMyService/GetProductsResponse" message="tns:IMyService_GetProducts_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetInstance">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/GetInstance" message="tns:IMyService_GetInstance_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/GetInstanceResponse" message="tns:IMyService_GetInstance_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IMyService" type="tns:IMyService">
@@ -71,15 +61,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetProducts">
       <soap:operation soapAction="http://tempuri.org/IMyService/GetProducts" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetInstance">
-      <soap:operation soapAction="http://tempuri.org/IMyService/GetInstance" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

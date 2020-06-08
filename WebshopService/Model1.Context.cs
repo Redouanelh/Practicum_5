@@ -18,8 +18,9 @@ namespace WebshopService
         public Model1Container()
             : base("name=Model1Container")
         {
+            this.Configuration.ProxyCreationEnabled = false;
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

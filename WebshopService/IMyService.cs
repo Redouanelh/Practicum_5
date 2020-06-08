@@ -16,7 +16,6 @@ namespace WebshopService
         [OperationContract]
         String RegisterCheck(String username);
 
-        // deze moet verplaatst worden naar een productservice file
         [OperationContract]
         List<Product> GetProducts();
     }

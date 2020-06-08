@@ -40,7 +40,7 @@ namespace WebshopWPF
                 InvalidCombinationLabel.Visibility = Visibility.Hidden;
 
                 // Opent de MainWindow (de client dashboard)
-                MainWindow dashboard = new MainWindow();
+                MainWindow dashboard = new MainWindow(webshopProxy);
                 dashboard.Show();
 
                 // Sluit de inlogpagina

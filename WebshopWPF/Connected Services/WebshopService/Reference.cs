@@ -417,35 +417,6 @@ namespace WebshopWPF.WebshopService {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MyService", Namespace="http://schemas.datacontract.org/2004/07/WebshopService")]
-    [System.SerializableAttribute()]
-    public partial class MyService : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WebshopService.IMyService")]
     public interface IMyService {
@@ -467,12 +438,6 @@ namespace WebshopWPF.WebshopService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetProducts", ReplyAction="http://tempuri.org/IMyService/GetProductsResponse")]
         System.Threading.Tasks.Task<WebshopWPF.WebshopService.Product[]> GetProductsAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetInstance", ReplyAction="http://tempuri.org/IMyService/GetInstanceResponse")]
-        WebshopWPF.WebshopService.MyService GetInstance();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetInstance", ReplyAction="http://tempuri.org/IMyService/GetInstanceResponse")]
-        System.Threading.Tasks.Task<WebshopWPF.WebshopService.MyService> GetInstanceAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -524,14 +489,6 @@ namespace WebshopWPF.WebshopService {
         
         public System.Threading.Tasks.Task<WebshopWPF.WebshopService.Product[]> GetProductsAsync() {
             return base.Channel.GetProductsAsync();
-        }
-        
-        public WebshopWPF.WebshopService.MyService GetInstance() {
-            return base.Channel.GetInstance();
-        }
-        
-        public System.Threading.Tasks.Task<WebshopWPF.WebshopService.MyService> GetInstanceAsync() {
-            return base.Channel.GetInstanceAsync();
         }
     }
 }

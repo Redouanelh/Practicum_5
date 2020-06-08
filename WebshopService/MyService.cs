@@ -81,7 +81,7 @@ namespace WebshopService
                 // Voeg de producten toe aan de lege lijst van hierboven
                 foreach (Product p in linqproducts)
                 {
-                    Console.WriteLine("Name: " + p.Name + " Price: " + p.Price + " Stock: " + p.Stock + "\n");
+                    Console.WriteLine("\nName: " + p.Name + " Price: " + p.Price + " Stock: " + p.Stock);
                     products.Add(p);
                 }
 
