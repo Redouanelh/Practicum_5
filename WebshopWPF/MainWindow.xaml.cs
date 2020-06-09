@@ -28,8 +28,7 @@ namespace WebshopWPF
             InitializeComponent();
 
             // Alle producten uit de winkel ophalen met een stock (voorraad) boven de 0
-            Product[] products = LoadProducts();
-            ProductsListView.ItemsSource = products;
+            ProductsListView.ItemsSource = webshopProxy.GetProducts();
 
             // Haal het customerobject weer op
             int customerId = Int16.Parse(Application.Current.Resources["CUSTOMERID"].ToString());
@@ -60,15 +59,25 @@ namespace WebshopWPF
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
+            int customerId = Int16.Parse(Application.Current.Resources["CUSTOMERID"].ToString());
+            Customer customer = webshopProxy.GetCustomerById(customerId);
 
+            // Check of er items in de listview zitten
+            if (ProductsListView.SelectedItems.Count > 0)
+            {
+                var item = ProductsListView.SelectedItems[0];
+                String result = webshopProxy.BuyProduct((Product)item, customer);
+
+                // Opent de custom alert window waarbij ik als parameter de zojuist gekregen result string gebruik, deze wordt als label gebruikt
+                Alert AlertWindow = new Alert(result);
+                AlertWindow.Show();
+
+                // Refresh de productenlijst
+                ProductsListView.ItemsSource = webshopProxy.GetProducts();
+            }
 
             // Pas saldo label aan
             UpdateSaldoLabel();
-        }
-
-        private Product[] LoadProducts()
-        {
-            return webshopProxy.GetProducts();
         }
 
         private void UpdateSaldoLabel()

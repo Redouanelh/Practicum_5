@@ -8,32 +8,33 @@
         Title="Login" Height="450" Width="350" Icon="webshop-icon.png" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None">
-    <Grid>
+    <Border BorderBrush="White" BorderThickness="1" CornerRadius="10">
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <Border CornerRadius="10" Grid.RowSpan="2">
-                <Border.Background>
-                    <LinearGradientBrush>
-                        <GradientStop Color="#FF404040" Offset="0.0"/>
-                        <GradientStop Color="#ff8c00" Offset="1.2"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-            </Border>
+                <Border CornerRadius="10" Grid.RowSpan="2">
+                    <Border.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FF404040" Offset="0.0"/>
+                            <GradientStop Color="#ff8c00" Offset="1.2"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
 
-            <StackPanel VerticalAlignment="Center">
-                <Image Source="webshop-icon.png" Width="80"/>
-                <TextBlock/>
-                <TextBlock Text="Webshop Hogeschool Utrecht"
+                <StackPanel VerticalAlignment="Center">
+                    <Image Source="webshop-icon.png" Width="80"/>
+                    <TextBlock/>
+                    <TextBlock Text="Webshop Hogeschool Utrecht"
                            HorizontalAlignment="Center"
                            FontSize="20"
                            FontFamily="helvetica"
                            Foreground="White"
                            FontWeight="Light"/>
-                <Label x:Name="InvalidCombinationLabel"
+                    <Label x:Name="InvalidCombinationLabel"
                        Content="Onjuist gebruikersnaam/wachtwoord"
                        HorizontalAlignment="Center"
                        FontSize="15"
@@ -42,11 +43,11 @@
                        FontWeight="Light"
                        Margin="0, 20, 0, 0"
                        Visibility="Hidden"/>
-            </StackPanel>
+                </StackPanel>
 
-            <StackPanel Grid.Row="1">
-                <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="UsernameInput" FontFamily="helvetica"
+                <StackPanel Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="UsernameInput" FontFamily="helvetica"
                              FontWeight="Light"
                              Text="Gebruikersnaam"
                              FontSize="18"
@@ -59,14 +60,14 @@
                              Opacity="0.5"
                              Height="25"
                              Margin="48, 0, 0, 0"/>
-                </StackPanel>
-                <Border Width="250"
+                    </StackPanel>
+                    <Border Width="250"
                         Height="2"
                         Background="White"
                         Opacity="0.5"/>
 
-                <StackPanel Orientation="Horizontal" Margin="0, 20, 0, 0">
-                    <PasswordBox x:Name="PasswordInput" FontFamily="helvetica"
+                    <StackPanel Orientation="Horizontal" Margin="0, 20, 0, 0">
+                        <PasswordBox x:Name="PasswordInput" FontFamily="helvetica"
                              FontWeight="Light"
                              Password="Wachtwoord"
                              FontSize="18"
@@ -79,20 +80,21 @@
                              Opacity="0.5"
                              Height="25"
                              Margin="48, 0, 0, 0"/>
-                </StackPanel>
-                <Border Width="250"
+                    </StackPanel>
+                    <Border Width="250"
                         Height="2"
                         Background="White"
                         Opacity="0.5"/>
 
-                <StackPanel Orientation="Horizontal" Margin="0, 50, 0, 0">
-                    <Button x:Name="RegisterButton" Width="100" Height="40" Content="Registreer" Margin="45, 0, 60, 0" Click="RegisterButton_Click"/>
-                    <Button x:Name="LoginButton" Width="100" Height="40" Content="Login" Click="LoginButton_Click"/>
+                    <StackPanel Orientation="Horizontal" Margin="0, 50, 0, 0">
+                        <Button x:Name="RegisterButton" Width="100" Height="40" Content="Registreer" Margin="45, 0, 60, 0" Click="RegisterButton_Click"/>
+                        <Button x:Name="LoginButton" Width="100" Height="40" Content="Login" Click="LoginButton_Click"/>
+                    </StackPanel>
+
                 </StackPanel>
-                
-            </StackPanel>
 
 
+            </Grid>
         </Grid>
-    </Grid>
+    </Border>
 </Window>

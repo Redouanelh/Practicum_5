@@ -26,7 +26,7 @@ namespace WebshopService
         List<Product> GetProductsFromCustomer(int customerId);
 
         [OperationContract]
-        Boolean BuyProduct(int productId, int customerId);
+        String BuyProduct(Product product, Customer customer);
 
     }
 }

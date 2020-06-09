@@ -8,6 +8,7 @@
         Title="MyProducts" Height="450" Width="350" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None">
+
     <Grid>
         <Grid>
             <Grid.RowDefinitions>

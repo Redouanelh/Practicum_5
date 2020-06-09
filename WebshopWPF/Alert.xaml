@@ -5,8 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WebshopWPF"
         mc:Ignorable="d"
-        Title="Alert" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Alert" Height="250" Width="200" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Border BorderBrush="White" BorderThickness="1" CornerRadius="10">
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="170"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border CornerRadius="10" Grid.RowSpan="2">
+                    <Border.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#FF404040" Offset="0.0"/>
+                            <GradientStop Color="#ff8c00" Offset="1.2"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Line Stretch="Fill" Stroke="White" X2="1" Margin="0, 300, 0, 0"/>
+                </Border>
+
+                <Label x:Name="MessageLabel"
+                       HorizontalAlignment="Center"
+                       FontSize="18"
+                       FontFamily="helvetica"
+                       Foreground="White"
+                       FontWeight="Light"
+                       Margin="0, 0, 0, 0"
+                       Visibility="Visible"/>
+
+                <Button x:Name="UnderstoodButton" Width="180" Height="40" FontSize="22" Content="Begrepen" Grid.Row="1" Click="UnderstoodButton_Click" Margin="0, 0, 0, 0"/>
+
+            </Grid>
+        </Grid>
+    </Border>
+    
 </Window>

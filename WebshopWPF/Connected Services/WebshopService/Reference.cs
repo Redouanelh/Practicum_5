@@ -359,10 +359,10 @@ namespace WebshopWPF.WebshopService {
         System.Threading.Tasks.Task<WebshopWPF.WebshopService.Product[]> GetProductsFromCustomerAsync(int customerId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/BuyProduct", ReplyAction="http://tempuri.org/IMyService/BuyProductResponse")]
-        bool BuyProduct(int productId, int customerId);
+        string BuyProduct(WebshopWPF.WebshopService.Product product, WebshopWPF.WebshopService.Customer customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/BuyProduct", ReplyAction="http://tempuri.org/IMyService/BuyProductResponse")]
-        System.Threading.Tasks.Task<bool> BuyProductAsync(int productId, int customerId);
+        System.Threading.Tasks.Task<string> BuyProductAsync(WebshopWPF.WebshopService.Product product, WebshopWPF.WebshopService.Customer customer);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -432,12 +432,12 @@ namespace WebshopWPF.WebshopService {
             return base.Channel.GetProductsFromCustomerAsync(customerId);
         }
         
-        public bool BuyProduct(int productId, int customerId) {
-            return base.Channel.BuyProduct(productId, customerId);
+        public string BuyProduct(WebshopWPF.WebshopService.Product product, WebshopWPF.WebshopService.Customer customer) {
+            return base.Channel.BuyProduct(product, customer);
         }
         
-        public System.Threading.Tasks.Task<bool> BuyProductAsync(int productId, int customerId) {
-            return base.Channel.BuyProductAsync(productId, customerId);
+        public System.Threading.Tasks.Task<string> BuyProductAsync(WebshopWPF.WebshopService.Product product, WebshopWPF.WebshopService.Customer customer) {
+            return base.Channel.BuyProductAsync(product, customer);
         }
     }
 }

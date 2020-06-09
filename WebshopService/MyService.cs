@@ -123,13 +123,12 @@ namespace WebshopService
             }
         }
 
-        public bool BuyProduct(int productId, int customerId)
+        public String BuyProduct(Product product, Customer customer)
         {
             using (Model1Container ctx = new Model1Container())
             {
-
-
-                throw new NotImplementedException();
+                Console.WriteLine("\nTrying to buy: " + product.Name + " with price: " + product.Price + " and stock: " + product.Stock + "...");
+                return product.Name + " test";
             }
         }
     }

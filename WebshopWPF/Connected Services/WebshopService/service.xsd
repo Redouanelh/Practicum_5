@@ -73,15 +73,15 @@
   <xs:element name="BuyProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="productId" type="xs:int" />
-        <xs:element minOccurs="0" name="customerId" type="xs:int" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WebshopService" minOccurs="0" name="product" nillable="true" type="q5:Product" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WebshopService" minOccurs="0" name="customer" nillable="true" type="q6:Customer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="BuyProductResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="BuyProductResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="BuyProductResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

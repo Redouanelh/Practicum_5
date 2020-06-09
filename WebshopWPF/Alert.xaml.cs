@@ -19,9 +19,16 @@ namespace WebshopWPF
     /// </summary>
     public partial class Alert : Window
     {
-        public Alert()
+        public Alert(String message)
         {
             InitializeComponent();
+
+            MessageLabel.Content = message;
+        }
+
+        private void UnderstoodButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
