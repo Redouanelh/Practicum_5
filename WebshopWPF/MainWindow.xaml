@@ -31,6 +31,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                
                 <ListView x:Name="ProductsListView" Grid.Column="1" Grid.Row="0" Foreground="White">
                     <ListView.Background>
                         <LinearGradientBrush>
@@ -45,10 +46,16 @@
                         </GridView>
                     </ListView.View>
                 </ListView>
+
+                <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                    <Button x:Name="RefreshButton" Width="140" Height="40" Content="Ververs producten" Click="MyProductsButton_Click" Margin="10,-15,210,25.4"/>
+                    <Button x:Name="BuyButton" Width="140" Height="40" Content="Koop geselecteerd product" Click="MyProductsButton_Click" Margin="10,-15,210,25.4"/>
+                </StackPanel>
+                
             </Grid>
 
             <StackPanel Orientation="Horizontal" Margin="0, 50, 0, 0" Grid.Row="1">
-                <Button x:Name="MyProductsButton" Width="140" Height="40" Content="Mijn producten" Click="MyProductsButton_Click" Margin="10,-15,220,25.4"/>
+                <Button x:Name="MyProductsButton" Width="140" Height="40" Content="Mijn producten" Click="MyProductsButton_Click" Margin="10,-15,210,25.4"/>
 
                 <TextBox x:Name="StaticSaldoLabel" FontFamily="helvetica"
                              FontWeight="Light"
@@ -57,13 +64,13 @@
                              HorizontalAlignment="Center"
                              Background="Transparent"
                              BorderThickness="0"
-                             Width="60"
+                             Width="80"
                              HorizontalContentAlignment="Left"
                              Opacity="0.5"
                              Height="25"
                              Margin="10,-5,0,30.4"
                              IsEnabled="False"
-                             Text="Saldo:"/>
+                             Text="Saldo: €"/>
                 <TextBox x:Name="DynamicSaldoLabel" FontFamily="helvetica"
                              FontWeight="Light"
                              FontSize="22"
@@ -75,9 +82,8 @@
                              HorizontalContentAlignment="Left"
                              Opacity="0.5"
                              Height="25"
-                             Margin="5,-5,220,30.4"
-                             IsEnabled="False"
-                             Text="€ ..."/>
+                             Margin="5,-5,210,30.4"
+                             IsEnabled="False"/>
 
                 <Button x:Name="CloseButton" Width="140" Height="40" Content="Applicatie sluiten" Click="CloseButton_Click" Margin="30,-13,0,23.4"/>
             </StackPanel>

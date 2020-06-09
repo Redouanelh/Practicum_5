@@ -32,12 +32,15 @@ namespace WebshopWPF
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             // Check of de username en password combinatie correct in de database staan (zo ja; true, zo nee; false)
-            Boolean found = webshopProxy.LoginCheck(UsernameInput.Text, PasswordInput.Password);
+            Customer customer = webshopProxy.LoginCheck(UsernameInput.Text, PasswordInput.Password);
 
-            if (found)
+            if (customer != null)
             {
                 // Persoon heeft juiste inloggegevens gegeven
                 InvalidCombinationLabel.Visibility = Visibility.Hidden;
+
+                // Onthoud het id van de ingelogde customer binnen de current applicatie (https://stackoverflow.com/questions/22270850/what-is-the-difference-between-application-current-resources-and-resources)
+                Application.Current.Resources["CUSTOMERID"] = customer.CustomerId;
 
                 // Opent de MainWindow (de client dashboard)
                 MainWindow dashboard = new MainWindow();

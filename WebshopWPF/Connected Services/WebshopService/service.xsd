@@ -12,7 +12,7 @@
   <xs:element name="LoginCheckResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="LoginCheckResult" type="xs:boolean" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WebshopService" minOccurs="0" name="LoginCheckResult" nillable="true" type="q1:Customer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -30,6 +30,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCustomerById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WebshopService" minOccurs="0" name="GetCustomerByIdResult" nillable="true" type="q2:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetProducts">
     <xs:complexType>
       <xs:sequence />
@@ -38,7 +52,7 @@
   <xs:element name="GetProductsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WebshopService" minOccurs="0" name="GetProductsResult" nillable="true" type="q1:ArrayOfProduct" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WebshopService" minOccurs="0" name="GetProductsResult" nillable="true" type="q3:ArrayOfProduct" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

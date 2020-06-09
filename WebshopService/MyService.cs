@@ -10,7 +10,7 @@ namespace WebshopService
 {
     public class MyService : IMyService
     {
-        public Boolean LoginCheck(String username, String password)
+        public Customer LoginCheck(String username, String password)
         {
             using (Model1Container ctx = new Model1Container())
             {
@@ -20,12 +20,14 @@ namespace WebshopService
                
                 if (customer.Any())
                 {
-                    Console.WriteLine("\nLogin successful...");
-                    return true;
+                    Console.WriteLine("\n" + username + " tried logging in...");
+                    Console.WriteLine("Login successful...");
+                    return customer.First();
                 } else
                 {
-                    Console.WriteLine("\nLogin failed...");
-                    return false;
+                    Console.WriteLine("\n" + username + " tried logging in...");
+                    Console.WriteLine("Login failed...");
+                    return null;
                 }
             }  
         }
@@ -63,6 +65,23 @@ namespace WebshopService
                     return null;
                 }
             }
+        }
+
+        public Customer GetCustomerById(int id)
+        {
+            using (Model1Container ctx = new Model1Container()) {
+                var customer = (from c in ctx.Customers
+                                where c.CustomerId == id
+                                select c);
+
+                if (customer.Any())
+                {
+                    return customer.First();
+                } else
+                {
+                    return null;
+                }
+            } 
         }
 
         public List<Product> GetProducts()

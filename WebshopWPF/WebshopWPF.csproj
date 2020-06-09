@@ -138,6 +138,9 @@
     <None Include="Connected Services\WebshopService\WebshopService.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WebshopService\WebshopWPF.WebshopService.Customer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\WebshopService\WebshopWPF.WebshopService.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -22,6 +22,7 @@ namespace WebshopWPF
     public partial class MainWindow : Window
     {
         private MyServiceClient webshopProxy = new MyServiceClient();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,6 +30,13 @@ namespace WebshopWPF
             // Alle producten uit de winkel ophalen met een stock (voorraad) boven de 0
             Product[] products = LoadProducts();
             ProductsListView.ItemsSource = products;
+
+            // Haal het customerobject weer op
+            int customerId = Int16.Parse(Application.Current.Resources["CUSTOMERID"].ToString());
+            Customer customer = webshopProxy.GetCustomerById(customerId);
+
+            // Toont huidige saldo
+            DynamicSaldoLabel.Text = customer.Balance.ToString();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

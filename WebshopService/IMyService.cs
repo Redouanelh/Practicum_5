@@ -11,12 +11,16 @@ namespace WebshopService
     {
 
         [OperationContract]
-        Boolean LoginCheck(String username, String password);
+        Customer LoginCheck(String username, String password);
 
         [OperationContract]
         String RegisterCheck(String username);
 
         [OperationContract]
+        Customer GetCustomerById(int id);
+
+        [OperationContract]
         List<Product> GetProducts();
+
     }
 }
