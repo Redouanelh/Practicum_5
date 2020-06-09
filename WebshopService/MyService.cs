@@ -128,7 +128,7 @@ namespace WebshopService
             using (Model1Container ctx = new Model1Container())
             {
                 Console.WriteLine("\nTrying to buy: " + product.Name + " with price: " + product.Price + " and stock: " + product.Stock + "...");
-                return product.Name + " test";
+                return "Dit is een testalert, hier komt een bericht mettt de bijbehorende message";
             }
         }
     }

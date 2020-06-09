@@ -23,7 +23,8 @@ namespace WebshopWPF
         {
             InitializeComponent();
 
-            MessageLabel.Content = message;
+            MessageLabel.Text = message;
+            MessageLabel.TextWrapping = TextWrapping.WrapWithOverflow;
         }
 
         private void UnderstoodButton_Click(object sender, RoutedEventArgs e)

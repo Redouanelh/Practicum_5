@@ -27,14 +27,15 @@
                     <Line Stretch="Fill" Stroke="White" X2="1" Margin="0, 300, 0, 0"/>
                 </Border>
 
-                <Label x:Name="MessageLabel"
-                       HorizontalAlignment="Center"
-                       FontSize="18"
-                       FontFamily="helvetica"
-                       Foreground="White"
-                       FontWeight="Light"
-                       Margin="0, 0, 0, 0"
-                       Visibility="Visible"/>
+             
+
+                <TextBlock x:Name="MessageLabel"
+                           FontSize="18"
+                           FontFamily="helvetica"
+                           Foreground="White"
+                           FontWeight="Light"
+                           Width="180"
+                           Margin="0, 20, 0, 0"/>
 
                 <Button x:Name="UnderstoodButton" Width="180" Height="40" FontSize="22" Content="Begrepen" Grid.Row="1" Click="UnderstoodButton_Click" Margin="0, 0, 0, 0"/>
 
