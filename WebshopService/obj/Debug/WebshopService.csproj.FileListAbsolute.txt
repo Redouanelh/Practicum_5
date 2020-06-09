@@ -12,3 +12,4 @@ C:\Users\Redou\source\repos\Practicum_5\WebshopService\obj\Debug\WebshopService.
 C:\Users\Redou\source\repos\Practicum_5\WebshopService\obj\Debug\WebshopService.dll
 C:\Users\Redou\source\repos\Practicum_5\WebshopService\obj\Debug\WebshopService.pdb
 C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\PasswordGenerator.dll
+C:\Users\Redou\source\repos\Practicum_5\WebshopService\bin\Debug\WebshopService.dll.config

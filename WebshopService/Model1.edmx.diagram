@@ -7,11 +7,9 @@
       <Diagram DiagramId="0d0c25d268c949afbbf7b78f0f25a168" Name="Diagram1" >
         <EntityTypeShape EntityType="Model1.Product" Width="1.5" PointX="0.625" PointY="1" />
         <EntityTypeShape EntityType="Model1.PaymentRule" Width="1.5" PointX="3.5" PointY="1.25" />
-        <EntityTypeShape EntityType="Model1.Payment" Width="1.5" PointX="3.5" PointY="3.5" />
-        <EntityTypeShape EntityType="Model1.Customer" Width="1.5" PointX="6" PointY="3.375" />
-        <AssociationConnector Association="Model1.PaymentRulePayment" />
-        <AssociationConnector Association="Model1.PaymentCustomer" />
+        <EntityTypeShape EntityType="Model1.Customer" Width="1.5" PointX="6" PointY="1" />
         <AssociationConnector Association="Model1.ProductPaymentRule" />
+        <AssociationConnector Association="Model1.PaymentRuleCustomer" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

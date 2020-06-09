@@ -17,7 +17,7 @@ namespace WebshopService
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Customer()
         {
-            this.Payment = new HashSet<Payment>();
+            this.PaymentRule = new HashSet<PaymentRule>();
         }
     
         public int CustomerId { get; set; }
@@ -26,6 +26,6 @@ namespace WebshopService
         public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Payment> Payment { get; set; }
+        public virtual ICollection<PaymentRule> PaymentRule { get; set; }
     }
 }

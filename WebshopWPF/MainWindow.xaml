@@ -48,8 +48,8 @@
                 </ListView>
 
                 <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-                    <Button x:Name="RefreshButton" Width="140" Height="40" Content="Ververs producten" Click="MyProductsButton_Click" Margin="10,-15,210,25.4"/>
-                    <Button x:Name="BuyButton" Width="140" Height="40" Content="Koop geselecteerd product" Click="MyProductsButton_Click" Margin="10,-15,210,25.4"/>
+                    <Button x:Name="RefreshButton" Width="200" Height="40" FontSize="22" Content="Ververs producten" Click="RefreshButton_Click" Margin="0, 145, 0, 0"/>
+                    <Button x:Name="BuyButton" Width="200" Height="40" FontSize="22" Content="Koop product" Click="BuyButton_Click" Margin="0, 20, 0, 0"/>
                 </StackPanel>
                 
             </Grid>

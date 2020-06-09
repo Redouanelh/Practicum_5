@@ -53,6 +53,15 @@ namespace WebshopWPF
             // Sluit de dashboard
             this.Close();
         }
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BuyButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private Product[] LoadProducts()
         {

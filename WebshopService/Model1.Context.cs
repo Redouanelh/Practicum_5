@@ -15,11 +15,11 @@ namespace WebshopService
     
     public partial class Model1Container : DbContext
     {
+        // Fix https://stackoverflow.com/questions/2582036/an-existing-connection-was-forcibly-closed-by-the-remote-host
         public Model1Container()
             : base("name=Model1Container")
         {
-            // Een of andere proxy socket error fix : https://stackoverflow.com/questions/2582036/an-existing-connection-was-forcibly-closed-by-the-remote-host
-            this.Configuration.ProxyCreationEnabled = false;
+            this.Configuration.ProxyCreationEnabled = false; // ADD THIS LINE !
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -29,7 +29,6 @@ namespace WebshopService
     
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<PaymentRule> PaymentRules { get; set; }
-        public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
     }
 }

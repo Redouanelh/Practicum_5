@@ -15,3 +15,4 @@ C:\Users\Redou\source\repos\Practicum_5\WebshopHost\obj\Debug\WebshopHost.pdb
 C:\Users\Redou\source\repos\Practicum_5\WebshopHost\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Redou\source\repos\Practicum_5\WebshopHost\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Redou\source\repos\Practicum_5\WebshopHost\bin\Debug\PasswordGenerator.dll
+C:\Users\Redou\source\repos\Practicum_5\WebshopHost\bin\Debug\WebshopService.dll.config

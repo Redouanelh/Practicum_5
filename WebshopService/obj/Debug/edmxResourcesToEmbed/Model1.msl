@@ -19,14 +19,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Payments">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.Payment)">
-        <MappingFragment StoreEntitySet="Payments">
-          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
-          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="IsTypeOf(Model1.Customer)">
         <MappingFragment StoreEntitySet="Customers">
@@ -37,25 +29,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="PaymentRulePayment" TypeName="Model1.PaymentRulePayment" StoreEntitySet="PaymentRules">
-      <EndProperty Name="Payment">
-        <ScalarProperty Name="PaymentId" ColumnName="Payments_PaymentId" />
+    <AssociationSetMapping Name="ProductPaymentRule" TypeName="Model1.ProductPaymentRule" StoreEntitySet="PaymentRules">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="ProductId" ColumnName="Product_ProductId" />
       </EndProperty>
       <EndProperty Name="PaymentRule">
         <ScalarProperty Name="PaymentRuleId" ColumnName="PaymentRuleId" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="PaymentCustomer" TypeName="Model1.PaymentCustomer" StoreEntitySet="Payments">
+    <AssociationSetMapping Name="PaymentRuleCustomer" TypeName="Model1.PaymentRuleCustomer" StoreEntitySet="PaymentRules">
       <EndProperty Name="Customer">
         <ScalarProperty Name="CustomerId" ColumnName="Customers_CustomerId" />
-      </EndProperty>
-      <EndProperty Name="Payment">
-        <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProductPaymentRule" TypeName="Model1.ProductPaymentRule" StoreEntitySet="PaymentRules">
-      <EndProperty Name="Product">
-        <ScalarProperty Name="ProductId" ColumnName="Product_ProductId" />
       </EndProperty>
       <EndProperty Name="PaymentRule">
         <ScalarProperty Name="PaymentRuleId" ColumnName="PaymentRuleId" />

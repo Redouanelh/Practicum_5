@@ -17,7 +17,7 @@ namespace WebshopService
         public int PaymentRuleId { get; set; }
         public int Amount { get; set; }
     
-        public virtual Payment Payments { get; set; }
         public virtual Product Product { get; set; }
+        public virtual Customer Customers { get; set; }
     }
 }

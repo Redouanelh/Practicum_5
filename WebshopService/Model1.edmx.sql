@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/04/2020 23:49:04
+-- Date Created: 06/09/2020 11:32:20
 -- Generated from EDMX file: C:\Users\Redou\source\repos\Practicum_5\WebshopService\Model1.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,23 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ProductPaymentRule]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PaymentRules] DROP CONSTRAINT [FK_ProductPaymentRule];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Products]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Products];
+GO
+IF OBJECT_ID(N'[dbo].[PaymentRules]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PaymentRules];
+GO
+IF OBJECT_ID(N'[dbo].[Customers]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Customers];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -40,15 +52,7 @@ GO
 CREATE TABLE [dbo].[PaymentRules] (
     [PaymentRuleId] int IDENTITY(1,1) NOT NULL,
     [Amount] int  NOT NULL,
-    [Payments_PaymentId] int  NOT NULL,
-    [Product_ProductId] int  NOT NULL
-);
-GO
-
--- Creating table 'Payments'
-CREATE TABLE [dbo].[Payments] (
-    [PaymentId] int IDENTITY(1,1) NOT NULL,
-    [PaymentDate] datetime  NOT NULL,
+    [Product_ProductId] int  NOT NULL,
     [Customers_CustomerId] int  NOT NULL
 );
 GO
@@ -78,12 +82,6 @@ ADD CONSTRAINT [PK_PaymentRules]
     PRIMARY KEY CLUSTERED ([PaymentRuleId] ASC);
 GO
 
--- Creating primary key on [PaymentId] in table 'Payments'
-ALTER TABLE [dbo].[Payments]
-ADD CONSTRAINT [PK_Payments]
-    PRIMARY KEY CLUSTERED ([PaymentId] ASC);
-GO
-
 -- Creating primary key on [CustomerId] in table 'Customers'
 ALTER TABLE [dbo].[Customers]
 ADD CONSTRAINT [PK_Customers]
@@ -93,36 +91,6 @@ GO
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
-
--- Creating foreign key on [Payments_PaymentId] in table 'PaymentRules'
-ALTER TABLE [dbo].[PaymentRules]
-ADD CONSTRAINT [FK_PaymentRulePayment]
-    FOREIGN KEY ([Payments_PaymentId])
-    REFERENCES [dbo].[Payments]
-        ([PaymentId])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_PaymentRulePayment'
-CREATE INDEX [IX_FK_PaymentRulePayment]
-ON [dbo].[PaymentRules]
-    ([Payments_PaymentId]);
-GO
-
--- Creating foreign key on [Customers_CustomerId] in table 'Payments'
-ALTER TABLE [dbo].[Payments]
-ADD CONSTRAINT [FK_PaymentCustomer]
-    FOREIGN KEY ([Customers_CustomerId])
-    REFERENCES [dbo].[Customers]
-        ([CustomerId])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_PaymentCustomer'
-CREATE INDEX [IX_FK_PaymentCustomer]
-ON [dbo].[Payments]
-    ([Customers_CustomerId]);
-GO
 
 -- Creating foreign key on [Product_ProductId] in table 'PaymentRules'
 ALTER TABLE [dbo].[PaymentRules]
@@ -137,6 +105,21 @@ GO
 CREATE INDEX [IX_FK_ProductPaymentRule]
 ON [dbo].[PaymentRules]
     ([Product_ProductId]);
+GO
+
+-- Creating foreign key on [Customers_CustomerId] in table 'PaymentRules'
+ALTER TABLE [dbo].[PaymentRules]
+ADD CONSTRAINT [FK_PaymentRuleCustomer]
+    FOREIGN KEY ([Customers_CustomerId])
+    REFERENCES [dbo].[Customers]
+        ([CustomerId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PaymentRuleCustomer'
+CREATE INDEX [IX_FK_PaymentRuleCustomer]
+ON [dbo].[PaymentRules]
+    ([Customers_CustomerId]);
 GO
 
 -- --------------------------------------------------
