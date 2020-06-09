@@ -55,17 +55,27 @@ namespace WebshopWPF
         }
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ProductsListView.ItemsSource = webshopProxy.GetProducts();
         }
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
 
+
+            // Pas saldo label aan
+            UpdateSaldoLabel();
         }
 
         private Product[] LoadProducts()
         {
             return webshopProxy.GetProducts();
+        }
+
+        private void UpdateSaldoLabel()
+        {
+            int customerId = Int16.Parse(Application.Current.Resources["CUSTOMERID"].ToString());
+            Customer customer = webshopProxy.GetCustomerById(customerId);
+            DynamicSaldoLabel.Text = customer.Balance.ToString();
         }
     }
 }
