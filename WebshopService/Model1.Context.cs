@@ -18,6 +18,7 @@ namespace WebshopService
         public Model1Container()
             : base("name=Model1Container")
         {
+            // Een of andere proxy socket error fix : https://stackoverflow.com/questions/2582036/an-existing-connection-was-forcibly-closed-by-the-remote-host
             this.Configuration.ProxyCreationEnabled = false;
         }
 

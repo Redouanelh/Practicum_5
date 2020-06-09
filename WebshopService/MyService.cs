@@ -73,7 +73,7 @@ namespace WebshopService
                 List<Product> products = new List<Product>();
 
                 // Haal de producten op uit de database met een stock (voorraad) boven de 0
-                Console.WriteLine("Retrieving products from database...");
+                Console.WriteLine("\nRetrieving products from database with enough stock...");
                 var linqproducts = from p in ctx.Products
                                    where p.Stock > 0
                                    select p;

@@ -21,12 +21,14 @@ namespace WebshopWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(MyServiceClient webshopProxy)
+        private MyServiceClient webshopProxy = new MyServiceClient();
+        public MainWindow()
         {
             InitializeComponent();
 
             // Alle producten uit de winkel ophalen met een stock (voorraad) boven de 0
-            Product[] products = webshopProxy.GetProducts();
+            Product[] products = LoadProducts();
+            ProductsListView.ItemsSource = products;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -42,6 +44,11 @@ namespace WebshopWPF
 
             // Sluit de dashboard
             this.Close();
+        }
+
+        private Product[] LoadProducts()
+        {
+            return webshopProxy.GetProducts();
         }
     }
 }
