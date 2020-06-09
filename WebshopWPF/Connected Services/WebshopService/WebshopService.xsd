@@ -5,26 +5,11 @@
       <xs:element minOccurs="0" name="Balance" type="xs:double" />
       <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Payment" nillable="true" type="tns:ArrayOfPayment" />
+      <xs:element minOccurs="0" name="PaymentRule" nillable="true" type="tns:ArrayOfPaymentRule" />
       <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Customer" nillable="true" type="tns:Customer" />
-  <xs:complexType name="ArrayOfPayment">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Payment" nillable="true" type="tns:Payment" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPayment" nillable="true" type="tns:ArrayOfPayment" />
-  <xs:complexType name="Payment">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Customers" nillable="true" type="tns:Customer" />
-      <xs:element minOccurs="0" name="PaymentDate" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="PaymentId" type="xs:int" />
-      <xs:element minOccurs="0" name="PaymentRule" nillable="true" type="tns:ArrayOfPaymentRule" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Payment" nillable="true" type="tns:Payment" />
   <xs:complexType name="ArrayOfPaymentRule">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentRule" nillable="true" type="tns:PaymentRule" />
@@ -34,8 +19,8 @@
   <xs:complexType name="PaymentRule">
     <xs:sequence>
       <xs:element minOccurs="0" name="Amount" type="xs:int" />
+      <xs:element minOccurs="0" name="Customers" nillable="true" type="tns:Customer" />
       <xs:element minOccurs="0" name="PaymentRuleId" type="xs:int" />
-      <xs:element minOccurs="0" name="Payments" nillable="true" type="tns:Payment" />
       <xs:element minOccurs="0" name="Product" nillable="true" type="tns:Product" />
     </xs:sequence>
   </xs:complexType>

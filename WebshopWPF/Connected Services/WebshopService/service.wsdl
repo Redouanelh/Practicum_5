@@ -31,6 +31,18 @@
   <wsdl:message name="IMyService_GetProducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductsResponse" />
   </wsdl:message>
+  <wsdl:message name="IMyService_GetProductsFromCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsFromCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_GetProductsFromCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsFromCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_BuyProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuyProduct" />
+  </wsdl:message>
+  <wsdl:message name="IMyService_BuyProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuyProductResponse" />
+  </wsdl:message>
   <wsdl:portType name="IMyService">
     <wsdl:operation name="LoginCheck">
       <wsdl:input wsaw:Action="http://tempuri.org/IMyService/LoginCheck" message="tns:IMyService_LoginCheck_InputMessage" />
@@ -47,6 +59,14 @@
     <wsdl:operation name="GetProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IMyService/GetProducts" message="tns:IMyService_GetProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMyService/GetProductsResponse" message="tns:IMyService_GetProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/GetProductsFromCustomer" message="tns:IMyService_GetProductsFromCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/GetProductsFromCustomerResponse" message="tns:IMyService_GetProductsFromCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuyProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyService/BuyProduct" message="tns:IMyService_BuyProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyService/BuyProductResponse" message="tns:IMyService_BuyProduct_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IMyService" type="tns:IMyService">
@@ -80,6 +100,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetProducts">
       <soap:operation soapAction="http://tempuri.org/IMyService/GetProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsFromCustomer">
+      <soap:operation soapAction="http://tempuri.org/IMyService/GetProductsFromCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuyProduct">
+      <soap:operation soapAction="http://tempuri.org/IMyService/BuyProduct" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

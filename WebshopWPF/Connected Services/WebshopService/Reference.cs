@@ -32,7 +32,7 @@ namespace WebshopWPF.WebshopService {
         private string PasswordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebshopWPF.WebshopService.Payment[] PaymentField;
+        private WebshopWPF.WebshopService.PaymentRule[] PaymentRuleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UsernameField;
@@ -87,14 +87,14 @@ namespace WebshopWPF.WebshopService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebshopWPF.WebshopService.Payment[] Payment {
+        public WebshopWPF.WebshopService.PaymentRule[] PaymentRule {
             get {
-                return this.PaymentField;
+                return this.PaymentRuleField;
             }
             set {
-                if ((object.ReferenceEquals(this.PaymentField, value) != true)) {
-                    this.PaymentField = value;
-                    this.RaisePropertyChanged("Payment");
+                if ((object.ReferenceEquals(this.PaymentRuleField, value) != true)) {
+                    this.PaymentRuleField = value;
+                    this.RaisePropertyChanged("PaymentRule");
                 }
             }
         }
@@ -124,99 +124,6 @@ namespace WebshopWPF.WebshopService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Payment", Namespace="http://schemas.datacontract.org/2004/07/WebshopService")]
-    [System.SerializableAttribute()]
-    public partial class Payment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebshopWPF.WebshopService.Customer CustomersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime PaymentDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PaymentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebshopWPF.WebshopService.PaymentRule[] PaymentRuleField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebshopWPF.WebshopService.Customer Customers {
-            get {
-                return this.CustomersField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomersField, value) != true)) {
-                    this.CustomersField = value;
-                    this.RaisePropertyChanged("Customers");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime PaymentDate {
-            get {
-                return this.PaymentDateField;
-            }
-            set {
-                if ((this.PaymentDateField.Equals(value) != true)) {
-                    this.PaymentDateField = value;
-                    this.RaisePropertyChanged("PaymentDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PaymentId {
-            get {
-                return this.PaymentIdField;
-            }
-            set {
-                if ((this.PaymentIdField.Equals(value) != true)) {
-                    this.PaymentIdField = value;
-                    this.RaisePropertyChanged("PaymentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebshopWPF.WebshopService.PaymentRule[] PaymentRule {
-            get {
-                return this.PaymentRuleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PaymentRuleField, value) != true)) {
-                    this.PaymentRuleField = value;
-                    this.RaisePropertyChanged("PaymentRule");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PaymentRule", Namespace="http://schemas.datacontract.org/2004/07/WebshopService")]
     [System.SerializableAttribute()]
     public partial class PaymentRule : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -228,10 +135,10 @@ namespace WebshopWPF.WebshopService {
         private int AmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PaymentRuleIdField;
+        private WebshopWPF.WebshopService.Customer CustomersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebshopWPF.WebshopService.Payment PaymentsField;
+        private int PaymentRuleIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private WebshopWPF.WebshopService.Product ProductField;
@@ -260,6 +167,19 @@ namespace WebshopWPF.WebshopService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebshopWPF.WebshopService.Customer Customers {
+            get {
+                return this.CustomersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomersField, value) != true)) {
+                    this.CustomersField = value;
+                    this.RaisePropertyChanged("Customers");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int PaymentRuleId {
             get {
                 return this.PaymentRuleIdField;
@@ -268,19 +188,6 @@ namespace WebshopWPF.WebshopService {
                 if ((this.PaymentRuleIdField.Equals(value) != true)) {
                     this.PaymentRuleIdField = value;
                     this.RaisePropertyChanged("PaymentRuleId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebshopWPF.WebshopService.Payment Payments {
-            get {
-                return this.PaymentsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PaymentsField, value) != true)) {
-                    this.PaymentsField = value;
-                    this.RaisePropertyChanged("Payments");
                 }
             }
         }
@@ -444,6 +351,18 @@ namespace WebshopWPF.WebshopService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetProducts", ReplyAction="http://tempuri.org/IMyService/GetProductsResponse")]
         System.Threading.Tasks.Task<WebshopWPF.WebshopService.Product[]> GetProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetProductsFromCustomer", ReplyAction="http://tempuri.org/IMyService/GetProductsFromCustomerResponse")]
+        WebshopWPF.WebshopService.Product[] GetProductsFromCustomer(int customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetProductsFromCustomer", ReplyAction="http://tempuri.org/IMyService/GetProductsFromCustomerResponse")]
+        System.Threading.Tasks.Task<WebshopWPF.WebshopService.Product[]> GetProductsFromCustomerAsync(int customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/BuyProduct", ReplyAction="http://tempuri.org/IMyService/BuyProductResponse")]
+        bool BuyProduct(int productId, int customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/BuyProduct", ReplyAction="http://tempuri.org/IMyService/BuyProductResponse")]
+        System.Threading.Tasks.Task<bool> BuyProductAsync(int productId, int customerId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -503,6 +422,22 @@ namespace WebshopWPF.WebshopService {
         
         public System.Threading.Tasks.Task<WebshopWPF.WebshopService.Product[]> GetProductsAsync() {
             return base.Channel.GetProductsAsync();
+        }
+        
+        public WebshopWPF.WebshopService.Product[] GetProductsFromCustomer(int customerId) {
+            return base.Channel.GetProductsFromCustomer(customerId);
+        }
+        
+        public System.Threading.Tasks.Task<WebshopWPF.WebshopService.Product[]> GetProductsFromCustomerAsync(int customerId) {
+            return base.Channel.GetProductsFromCustomerAsync(customerId);
+        }
+        
+        public bool BuyProduct(int productId, int customerId) {
+            return base.Channel.BuyProduct(productId, customerId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> BuyProductAsync(int productId, int customerId) {
+            return base.Channel.BuyProductAsync(productId, customerId);
         }
     }
 }

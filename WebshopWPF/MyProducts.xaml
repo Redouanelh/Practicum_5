@@ -5,8 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WebshopWPF"
         mc:Ignorable="d"
-        Title="MyProducts" Height="450" Width="800">
+        Title="MyProducts" Height="450" Width="350" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None">
     <Grid>
-        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="380"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="10" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FF404040" Offset="0.0"/>
+                        <GradientStop Color="#ff8c00" Offset="1.2"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <ListView x:Name="ProductsListView" Grid.Row="0" Foreground="White">
+                <ListView.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FF404040" Offset="0.0"/>
+                        <GradientStop Color="#ff8c00" Offset="1.2"/>
+                    </LinearGradientBrush>
+                </ListView.Background>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Naam" Width="110"/>
+                        <GridViewColumn Header="Prijs" Width="100"/>
+                        <GridViewColumn Header="Aantal" Width="100"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+
+                <TextBox x:Name="StaticSaldoLabel" FontFamily="helvetica"
+                             FontWeight="Light"
+                             FontSize="22"
+                             Foreground="White"
+                             HorizontalAlignment="Center"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="80"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="10,7,0,37.6"
+                             IsEnabled="False"
+                             Text="Saldo: €"/>
+                <TextBox x:Name="DynamicSaldoLabel" FontFamily="helvetica"
+                             FontWeight="Light"
+                             FontSize="22"
+                             Foreground="White"
+                             HorizontalAlignment="Center"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="51"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="5,7,55,37.6"
+                             IsEnabled="False"/>
+
+                <Button x:Name="DashboardButton" Width="140" Height="40" Content="Dashboard" Click="DashboardButton_Click" Margin="0, 0, 0, 0"/>
+
+            </StackPanel>
+
+        </Grid>
     </Grid>
 </Window>

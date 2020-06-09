@@ -46,7 +46,7 @@ namespace WebshopWPF
 
         private void MyProductsButton_Click(object sender, RoutedEventArgs e)
         {
-            // Toon de window met producten van de desbetreffende persoon. (*HAALDITWEG* TODO, miss de token die we gaan doen gebruiken voor username om producten op te halen?)
+            // Toon de window met producten van de desbetreffende persoon
             MyProducts myProductWindow = new MyProducts();
             myProductWindow.Show();
 

@@ -22,5 +22,11 @@ namespace WebshopService
         [OperationContract]
         List<Product> GetProducts();
 
+        [OperationContract]
+        List<Product> GetProductsFromCustomer(int customerId);
+
+        [OperationContract]
+        Boolean BuyProduct(int productId, int customerId);
+
     }
 }

@@ -26,3 +26,5 @@ C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\Register.g.cs
 C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\Register.baml
 C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\MyProducts.g.cs
 C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\MyProducts.baml
+C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\Alert.g.cs
+C:\Users\Redou\source\repos\Practicum_5\WebshopWPF\obj\Debug\Alert.baml

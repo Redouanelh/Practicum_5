@@ -100,7 +100,7 @@ namespace WebshopService
                 // Voeg de producten toe aan de lege lijst van hierboven
                 foreach (Product p in linqproducts)
                 {
-                    Console.WriteLine("\nName: " + p.Name + " Price: " + p.Price + " Stock: " + p.Stock);
+                    Console.WriteLine("Name: " + p.Name + " Price: " + p.Price + " Stock: " + p.Stock);
                     products.Add(p);
                 }
 
@@ -108,5 +108,29 @@ namespace WebshopService
             }
         }
 
+        public List<Product> GetProductsFromCustomer(int customerId)
+        {
+            using (Model1Container ctx = new Model1Container())
+            {
+                // Lege lijst waarin de producten komen die gereturned gaan worden
+                List<Product> products = new List<Product>();
+
+                // Haal de producten op uit de database van de desbetreffende customer
+                Console.WriteLine("\nRetrieving products from current customer...");
+                
+
+                return products;
+            }
+        }
+
+        public bool BuyProduct(int productId, int customerId)
+        {
+            using (Model1Container ctx = new Model1Container())
+            {
+
+
+                throw new NotImplementedException();
+            }
+        }
     }
 }
