@@ -362,6 +362,12 @@ namespace WebshopWPF.WebshopService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetCustomerById", ReplyAction="http://tempuri.org/IMyService/GetCustomerByIdResponse")]
         System.Threading.Tasks.Task<WebshopWPF.WebshopService.Customer> GetCustomerByIdAsync(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetProductById", ReplyAction="http://tempuri.org/IMyService/GetProductByIdResponse")]
+        WebshopWPF.WebshopService.Product GetProductById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetProductById", ReplyAction="http://tempuri.org/IMyService/GetProductByIdResponse")]
+        System.Threading.Tasks.Task<WebshopWPF.WebshopService.Product> GetProductByIdAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMyService/GetProducts", ReplyAction="http://tempuri.org/IMyService/GetProductsResponse")]
         WebshopWPF.WebshopService.Product[] GetProducts();
         
@@ -430,6 +436,14 @@ namespace WebshopWPF.WebshopService {
         
         public System.Threading.Tasks.Task<WebshopWPF.WebshopService.Customer> GetCustomerByIdAsync(int id) {
             return base.Channel.GetCustomerByIdAsync(id);
+        }
+        
+        public WebshopWPF.WebshopService.Product GetProductById(int id) {
+            return base.Channel.GetProductById(id);
+        }
+        
+        public System.Threading.Tasks.Task<WebshopWPF.WebshopService.Product> GetProductByIdAsync(int id) {
+            return base.Channel.GetProductByIdAsync(id);
         }
         
         public WebshopWPF.WebshopService.Product[] GetProducts() {

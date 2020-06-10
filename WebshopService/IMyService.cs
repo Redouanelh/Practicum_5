@@ -20,6 +20,9 @@ namespace WebshopService
         Customer GetCustomerById(int id);
 
         [OperationContract]
+        Product GetProductById(int id);
+
+        [OperationContract]
         List<Product> GetProducts();
 
         [OperationContract]

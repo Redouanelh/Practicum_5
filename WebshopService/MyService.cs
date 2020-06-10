@@ -83,6 +83,24 @@ namespace WebshopService
                 }
             } 
         }
+        public Product GetProductById(int id)
+        {
+            using (Model1Container ctx = new Model1Container())
+            {
+                var product = (from p in ctx.Products
+                                where p.ProductId == id
+                                select p);
+
+                if (product.Any())
+                {
+                    return product.First();
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
 
         public List<Product> GetProducts()
         {
@@ -140,7 +158,29 @@ namespace WebshopService
             using (Model1Container ctx = new Model1Container())
             {
                 Console.WriteLine("\nTrying to buy: " + product.Name + " with price: " + product.Price + " and stock: " + product.Stock + "...");
-                return "Dit is een testalert, hier komt een bericht mettt de bijbehorende message";
+
+                // Check of er voldoende saldo is voor de betreffende product
+                if (customer.Balance < product.Price)
+                {
+                    Console.WriteLine("Insufficient balance for product...");
+                    return "Onvoldoende saldo voor product: '" + product.Name + "' met prijs: €" + product.Price;
+                }
+
+                // Check of de actuele voorraad van product groter dan 0 is
+                int voorraad = GetProductById(product.ProductId).Stock;
+                if (voorraad == 0)
+                {
+                    Console.WriteLine("Product is out of stock, refresh product list...");
+                    return "Product: '" + product.Name + "' is uit voorraad";
+                }
+
+                // Saldo van customer verlagen, voorraad van product verlagen
+                // Check of product al in koppeltabel zit bij die customer. Zo ja, dan update aantal + 1. Zo nee, dan insert nieuwe rij in tabel
+
+                // save changes niet vergeten op die ctx
+
+
+                return " Product gekocht ";
             }
         }
     }
