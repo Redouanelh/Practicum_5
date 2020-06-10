@@ -170,17 +170,20 @@ namespace WebshopService
                 int voorraad = GetProductById(product.ProductId).Stock;
                 if (voorraad == 0)
                 {
-                    Console.WriteLine("Product is out of stock, refresh product list...");
+                    Console.WriteLine("Product is out of stock...");
                     return "Product: '" + product.Name + "' is uit voorraad";
                 }
 
                 // Saldo van customer verlagen, voorraad van product verlagen
+
+
+
                 // Check of product al in koppeltabel zit bij die customer. Zo ja, dan update aantal + 1. Zo nee, dan insert nieuwe rij in tabel
 
                 // save changes niet vergeten op die ctx
 
 
-                return " Product gekocht ";
+                return "Product: '" + product.Name + "'  met prijs: €" + product.Price + " is gekocht!";
             }
         }
     }
