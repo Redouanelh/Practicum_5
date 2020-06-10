@@ -27,6 +27,7 @@
   <xs:element name="PaymentRule" nillable="true" type="tns:PaymentRule" />
   <xs:complexType name="Product">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:int" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PaymentRules" nillable="true" type="tns:ArrayOfPaymentRule" />
       <xs:element minOccurs="0" name="Price" type="xs:double" />

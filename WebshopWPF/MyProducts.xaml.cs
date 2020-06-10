@@ -35,6 +35,7 @@ namespace WebshopWPF
 
             // Alle producten van de desbetreffende customer ophalen
             Product[] products = webshopProxy.GetProductsFromCustomer(customer.CustomerId);
+            ProductsListView.ItemsSource = products;
         }
 
         private void DashboardButton_Click(object sender, RoutedEventArgs e)

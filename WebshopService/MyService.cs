@@ -117,7 +117,19 @@ namespace WebshopService
 
                 // Haal de producten op uit de database van de desbetreffende customer
                 Console.WriteLine("\nRetrieving products from current customer...");
-                
+                var linqproducts = from p in ctx.Products
+                                   join pr in ctx.PaymentRules on p.ProductId equals pr.Product.ProductId
+                                   join c in ctx.Customers on pr.Customers.CustomerId equals c.CustomerId
+                                   where pr.Customers.CustomerId == customerId
+                                   select new { ProductNaam = p.Name, ProductPrijs = p.Price, ProductAantal = pr.Amount, Totaal = pr.Amount * p.Price };
+
+                foreach (var p in linqproducts)
+                {
+                    Product product = new Product { Name = p.ProductNaam, Price = p.ProductPrijs, Amount = p.ProductAantal };
+                    Console.WriteLine("Name: " + product.Name + ", Price: " + product.Price + ", Amount: " + product.Amount);
+
+                    products.Add(product);
+                }
 
                 return products;
             }

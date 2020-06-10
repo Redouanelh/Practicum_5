@@ -34,9 +34,9 @@
                 </ListView.Background>
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Naam" Width="110"/>
-                        <GridViewColumn Header="Prijs" Width="100"/>
-                        <GridViewColumn Header="Aantal" Width="100"/>
+                        <GridViewColumn Header="Naam" DisplayMemberBinding="{Binding Name}" Width="110"/>
+                        <GridViewColumn Header="Prijs" DisplayMemberBinding="{Binding Price}" Width="100"/>
+                        <GridViewColumn Header="Aantal" DisplayMemberBinding="{Binding Amount}" Width="100"/>
                     </GridView>
                 </ListView.View>
             </ListView>
