@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity.Migrations;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
@@ -158,7 +159,6 @@ namespace WebshopService
             using (Model1Container ctx = new Model1Container())
             {
                 Console.WriteLine("\nTrying to buy: " + product.Name + " with price: " + product.Price + " and stock: " + product.Stock + "...");
-
                 // Check of er voldoende saldo is voor de betreffende product
                 if (customer.Balance < product.Price)
                 {
@@ -174,17 +174,37 @@ namespace WebshopService
                     return "Product: '" + product.Name + "' is uit voorraad";
                 }
 
-                // Saldo van customer verlagen, voorraad van product verlagen
+                // Saldo van customer verlagen
+                var c = ctx.Customers.Where(cs => cs.CustomerId == customer.CustomerId).First();
+                c.Balance -= product.Price;
 
-
+                //voorraad van product verlagen
+                Product p = ctx.Products.Where(pd => pd.ProductId == product.ProductId).First();
+                p.Stock -= 1;
 
                 // Check of product al in koppeltabel zit bij die customer. Zo ja, dan update aantal + 1. Zo nee, dan insert nieuwe rij in tabel
+                var payment =   (from pm in ctx.PaymentRules
+                                 join prod in ctx.Products on pm.Product.ProductId equals prod.ProductId
+                                 join cust in ctx.Customers on pm.Customers.CustomerId equals cust.CustomerId
+                                 where pm.Product.ProductId == p.ProductId && pm.Customers.CustomerId == c.CustomerId
+                                select pm);
 
-                // save changes niet vergeten op die ctx
+                if (payment.Any())
+                {
+                    PaymentRule pr = payment.First();
+                    pr.Amount += 1;
+                }
+                else
+                {
+                    ctx.PaymentRules.Add(new PaymentRule { Customers = c, Product = p, Amount = 1 });
+                }
 
+                // Save de changes
+                ctx.SaveChanges();
 
                 return "Product: '" + product.Name + "'  met prijs: €" + product.Price + " is gekocht!";
             }
+
         }
     }
 }
